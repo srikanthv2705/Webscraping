@@ -1,0 +1,9 @@
+import requests
+import bs4
+web = requests.get("https://en.wikipedia.org/wiki/Machine_learning")
+type(web)
+soup = bs4.BeautifulSoup(web.text,'lxml')
+type(soup)
+soup.select('.toctext')
+for i in soup.select('.toctext'):
+    print(i.text)
